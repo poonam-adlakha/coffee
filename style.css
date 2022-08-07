@@ -1,0 +1,146 @@
+:root {
+    --background_color: #0f0f10;
+    --text-color: rgb(233, 234, 241);
+    --eye: #402e03;
+    --coffee: #bd823f;
+    --cup: #e7cfcf;
+    --white: rgb(255, 255, 255);
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background: var(--background_color);
+    text-transform: uppercase;
+}
+
+.container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.mug {
+    position: absolute;
+    display: block;
+    left: 40%;
+    top: 40%;
+}
+
+.handle {
+    position: absolute;
+    height: 30px;
+    width: 20px;
+    border-radius: 50%;
+    left: 95%;
+    top: 10%;
+    z-index: -1;
+    border: 6px solid var(--cup);
+    background: transparent;
+}
+
+.cup {
+    position: absolute;
+    width: 100px;
+    height: 90px;
+    border-bottom: 3px solid var(--cup);
+    border-radius: 0.5em 0.5em 7em 7em;
+    background: var(--cup);
+    z-index: 1;
+}
+
+.flavour {
+    position: absolute;
+    top: 5%;
+    background: linear-gradient(to bottom, var(--coffee) 5%, var(--cup) 8% 70%);
+    z-index: 1;
+}
+
+#eyeLeft, #eyeRight {
+    position: absolute;
+    display: block;
+    width: 1em;
+    height: 1em;
+    border: solid 1px var(--white);
+    border-radius: 50%;
+    transform: translate(130%, 100%);
+    z-index: 4;
+    animation: blink 1s linear infinite;
+}
+
+#eyeRight {
+    transform: translate(350%, 100%);
+}
+
+#lipTop {
+    position: absolute;
+    width: 65px;
+    height: 50px;
+    background: var(--cup);
+    z-index: 3;
+    top: 40%;
+    left: 30%;
+}
+#lipBottom {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: #0f0f10 2px solid;
+    border-radius: 50%;
+    z-index: 2;
+    transform: translate(100%, 100%);
+}
+
+
+#heartLeft, #heartRight, #heartCenter {
+    position: relative;
+    color: #d04530;
+    font-size: 20px;
+    transform: translate(80%, 90%);
+    z-index: 5;
+    animation: hearts 1s linear infinite;
+}
+
+#heartRight {
+    transform: translate(150%, 20%);
+}
+
+#heartCenter {
+    transform: translate(100%, 90%);
+}
+
+
+@keyframes blink {
+    0% {
+        background: radial-gradient(at 50% 50%, var(--eye) 40%, var(--white) 45%);
+    }
+
+    50% {
+        background: var(--coffee);
+    }
+
+    100% {
+        background: radial-gradient(at 50% 50%, var(--eye) 40%, var(--white) 45%);
+    }
+}
+
+@keyframes hearts {
+        0% {
+            bottom: 10px;
+            opacity: 0;
+        }
+    
+        50% {
+            bottom: 50px;
+            opacity: .3;
+        }
+    
+        100% {
+            bottom: 80px;
+            opacity: 0;
+        }
+    }
