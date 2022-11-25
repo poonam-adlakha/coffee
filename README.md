@@ -1,4 +1,4 @@
-Coffee
+Coffee Mug Animation
 
 Made with HTML and CSS only. 
 
